@@ -1,6 +1,6 @@
 # PiTrans 配置与运维
 
-项目介绍见 [README.md](README.md)。
+[README](../README.md) · [中文 README](../README.zh-CN.md) · [设计说明](DESIGN.md)
 
 ---
 
@@ -19,8 +19,11 @@ http://192.168.50.47
 
 ```
 pi_trans/                      （本仓库）
-├── README.md                  项目介绍
-├── OPERATIONS.md              配置与运维（本文档）
+├── README.md                  项目简介（英文）
+├── README.zh-CN.md            项目简介（中文）
+├── docs/
+│   ├── DESIGN.md              设计说明：技术方案、模型选择、后续优化
+│   └── OPERATIONS.md          配置与运维（本文档）
 └── pitrans/                   ＝ 树莓派上的 ~/pitrans
     ├── app.py                 FastAPI 服务：WebSocket、翻译调度、统计
     ├── asr.py                 录音 + VAD + 语音识别（SenseVoice / Zipformer / Qwen 同传）
@@ -147,7 +150,7 @@ sudo systemctl start pitrans
 - 有几条英文本身也有日常含义：port、server、client、motor、relay、interrupt、register、kernel。偏硬件的演讲里一般没问题；如果演讲中常用它们的日常含义，可以删掉。
 - **"封装"固定译为 footprint**，这是 KiCad 的用法。说"芯片封装"（package）时可能会被误译，必要时可以再加一条"芯片封装 = chip package"。
 - **每条的英文不能重复**。英→中方向会把英文当作键，重复的英文会互相覆盖。
-- **识别错误（如 "KiCad" 被听成 "Key CAD"）不能用术语表修正**：术语表是双向的，加进去后英→中方向反而会把正确的 KiCad 换成错的。这类错误需要在出字幕前另加一步文本替换（见 README 后续优化）。
+- **识别错误（如 "KiCad" 被听成 "Key CAD"）不能用术语表修正**：术语表是双向的，加进去后英→中方向反而会把正确的 KiCad 换成错的。这类错误需要在出字幕前另加一步文本替换（见[设计说明](DESIGN.md)的后续优化方向）。
 - 术语只是给模型的提示，不保证每次都按术语翻译。kicon-live-translate 自带的 7 条 KiCad 术语已经全部包含在本表中。
 
 修改方法：按第 3 节的注意事项编辑树莓派上的 `glossary`，然后重启服务。改完后同步到仓库的 `config.example.json`，两边保持一致。
