@@ -4,6 +4,8 @@
 
 Real-time speech translation on a Raspberry Pi. Plug in a USB microphone and speak Chinese or English. The transcript and its translation scroll live on a web page that anyone on the same network can open on a phone or laptop.
 
+![Raspberry Pi 4B with a USB conference microphone](docs/images/hardware.jpg)
+
 ## Use cases
 
 - **Tech talks and conferences** (e.g. KiCon Asia): the speaker talks in Chinese and the audience reads English captions on their phones, or the other way around.
