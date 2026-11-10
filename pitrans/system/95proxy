@@ -1,0 +1,2 @@
+Acquire::http::Proxy "http://192.168.50.86:7890";
+Acquire::https::Proxy "http://192.168.50.86:7890";

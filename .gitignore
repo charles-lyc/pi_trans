@@ -1,0 +1,6 @@
+# Real config holds API keys and Wi-Fi passwords; copy config.example.json instead
+pitrans/config.json
+pitrans/models/
+pitrans/.venv/
+pitrans/*.wav
+__pycache__/

@@ -1,0 +1,11 @@
+[Unit]
+Description=PiTrans: sync Wi-Fi list from config.json into NetworkManager
+After=NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/chao/pitrans/system/wifi_sync.py /home/chao/pitrans/config.json
+
+[Install]
+WantedBy=multi-user.target

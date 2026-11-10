@@ -1,0 +1,933 @@
+{
+  "direction": "zh2en",
+  "engine": "glm",
+  "fallback": true,
+  "proxy": "http://192.168.50.86:7890",
+  "wifi": [
+    {
+      "ssid": "",
+      "password": "",
+      "priority": 0,
+      "hidden": false
+    },
+    {
+      "ssid": "",
+      "password": "",
+      "priority": 0,
+      "hidden": false
+    }
+  ],
+  "audio_device": "auto",
+  "input_gain": 2.0,
+  "asr": "sensevoice",
+  "asr_language": "zh",
+  "vad": {
+    "threshold": 0.35,
+    "min_silence_duration": 0.7,
+    "min_speech_duration": 0.5,
+    "max_speech_duration": 10
+  },
+  "models": {
+    "sensevoice": "models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17",
+    "vad": "models/silero_vad.onnx",
+    "zipformer": "models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20"
+  },
+  "num_threads": 4,
+  "engines": {
+    "qwen-live": {
+      "type": "qwen-live",
+      "label": "Qwen 同传",
+      "use_proxy": false,
+      "url": "wss://dashscope.aliyuncs.com/api-ws/v1/realtime",
+      "api_key": "",
+      "model": "qwen3.8-livetranslate-flash-realtime",
+      "silence_ms": 600,
+      "vad_threshold": 0.5
+    },
+    "qwen": {
+      "type": "qwen-mt",
+      "label": "Qwen-MT",
+      "use_proxy": false,
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key": "",
+      "model": "qwen-mt-plus",
+      "domains": ""
+    },
+    "deepseek": {
+      "type": "llm",
+      "label": "DeepSeek",
+      "use_proxy": false,
+      "base_url": "https://api.deepseek.com",
+      "api_key": "",
+      "model": "deepseek-flash",
+      "prompt": "",
+      "extra_body": {}
+    },
+    "glm": {
+      "type": "llm",
+      "label": "GLM-Flash",
+      "use_proxy": false,
+      "base_url": "https://open.bigmodel.cn/api/paas/v4",
+      "api_key": "",
+      "model": "glm-4-flash-250414",
+      "prompt": "",
+      "extra_body": {}
+    },
+    "google": {
+      "use_proxy": true
+    },
+    "mymemory": {
+      "use_proxy": true
+    },
+    "bing": {
+      "use_proxy": true
+    }
+  },
+  "context_sentences": 3,
+  "glossary": [
+    {
+      "zh": "加泰罗尼亚",
+      "en": "Catalonia"
+    },
+    {
+      "zh": "KiCad",
+      "en": "KiCad"
+    },
+    {
+      "zh": "KiCon Asia",
+      "en": "KiCon Asia"
+    },
+    {
+      "zh": "开源硬件",
+      "en": "open-source hardware"
+    },
+    {
+      "zh": "智能硬件",
+      "en": "smart hardware"
+    },
+    {
+      "zh": "嵌入式",
+      "en": "embedded"
+    },
+    {
+      "zh": "物联网",
+      "en": "IoT"
+    },
+    {
+      "zh": "单片机",
+      "en": "microcontroller"
+    },
+    {
+      "zh": "芯片",
+      "en": "chip"
+    },
+    {
+      "zh": "传感器",
+      "en": "sensor"
+    },
+    {
+      "zh": "执行器",
+      "en": "actuator"
+    },
+    {
+      "zh": "固件",
+      "en": "firmware"
+    },
+    {
+      "zh": "烧录",
+      "en": "flashing"
+    },
+    {
+      "zh": "开发板",
+      "en": "development board"
+    },
+    {
+      "zh": "原型",
+      "en": "prototype"
+    },
+    {
+      "zh": "打样",
+      "en": "prototyping"
+    },
+    {
+      "zh": "量产",
+      "en": "mass production"
+    },
+    {
+      "zh": "贴片",
+      "en": "SMT assembly"
+    },
+    {
+      "zh": "回流焊",
+      "en": "reflow soldering"
+    },
+    {
+      "zh": "焊接",
+      "en": "soldering"
+    },
+    {
+      "zh": "印刷电路板",
+      "en": "PCB"
+    },
+    {
+      "zh": "原理图",
+      "en": "schematic"
+    },
+    {
+      "zh": "原理图符号",
+      "en": "schematic symbol"
+    },
+    {
+      "zh": "符号库",
+      "en": "symbol library"
+    },
+    {
+      "zh": "封装",
+      "en": "footprint"
+    },
+    {
+      "zh": "封装库",
+      "en": "footprint library"
+    },
+    {
+      "zh": "元器件",
+      "en": "component"
+    },
+    {
+      "zh": "布局",
+      "en": "layout"
+    },
+    {
+      "zh": "布线",
+      "en": "routing"
+    },
+    {
+      "zh": "走线",
+      "en": "trace"
+    },
+    {
+      "zh": "差分对",
+      "en": "differential pair"
+    },
+    {
+      "zh": "等长",
+      "en": "length matching"
+    },
+    {
+      "zh": "阻抗匹配",
+      "en": "impedance matching"
+    },
+    {
+      "zh": "过孔",
+      "en": "via"
+    },
+    {
+      "zh": "焊盘",
+      "en": "pad"
+    },
+    {
+      "zh": "铺铜",
+      "en": "copper pour"
+    },
+    {
+      "zh": "丝印",
+      "en": "silkscreen"
+    },
+    {
+      "zh": "阻焊",
+      "en": "solder mask"
+    },
+    {
+      "zh": "层叠",
+      "en": "stackup"
+    },
+    {
+      "zh": "四层板",
+      "en": "four-layer board"
+    },
+    {
+      "zh": "飞线",
+      "en": "ratsnest"
+    },
+    {
+      "zh": "网表",
+      "en": "netlist"
+    },
+    {
+      "zh": "设计规则检查",
+      "en": "design rule check"
+    },
+    {
+      "zh": "电气规则检查",
+      "en": "electrical rules check"
+    },
+    {
+      "zh": "物料清单",
+      "en": "bill of materials"
+    },
+    {
+      "zh": "光绘文件",
+      "en": "Gerber files"
+    },
+    {
+      "zh": "钻孔文件",
+      "en": "drill files"
+    },
+    {
+      "zh": "地平面",
+      "en": "ground plane"
+    },
+    {
+      "zh": "去耦电容",
+      "en": "decoupling capacitor"
+    },
+    {
+      "zh": "电阻",
+      "en": "resistor"
+    },
+    {
+      "zh": "电容",
+      "en": "capacitor"
+    },
+    {
+      "zh": "电感",
+      "en": "inductor"
+    },
+    {
+      "zh": "二极管",
+      "en": "diode"
+    },
+    {
+      "zh": "晶体管",
+      "en": "transistor"
+    },
+    {
+      "zh": "场效应管",
+      "en": "MOSFET"
+    },
+    {
+      "zh": "晶振",
+      "en": "crystal oscillator"
+    },
+    {
+      "zh": "低压差稳压器",
+      "en": "LDO regulator"
+    },
+    {
+      "zh": "示波器",
+      "en": "oscilloscope"
+    },
+    {
+      "zh": "万用表",
+      "en": "multimeter"
+    },
+    {
+      "zh": "逻辑分析仪",
+      "en": "logic analyzer"
+    },
+    {
+      "zh": "串口",
+      "en": "UART"
+    },
+    {
+      "zh": "低功耗蓝牙",
+      "en": "Bluetooth Low Energy"
+    },
+    {
+      "zh": "无线模组",
+      "en": "wireless module"
+    },
+    {
+      "zh": "天线",
+      "en": "antenna"
+    },
+    {
+      "zh": "电磁兼容",
+      "en": "EMC"
+    },
+    {
+      "zh": "静电防护",
+      "en": "ESD protection"
+    },
+    {
+      "zh": "功耗",
+      "en": "power consumption"
+    },
+    {
+      "zh": "仿真",
+      "en": "simulation"
+    },
+    {
+      "zh": "信号完整性",
+      "en": "signal integrity"
+    },
+    {
+      "zh": "电源完整性",
+      "en": "power integrity"
+    },
+    {
+      "zh": "树莓派",
+      "en": "Raspberry Pi"
+    },
+    {
+      "zh": "嘉立创",
+      "en": "JLCPCB"
+    },
+    {
+      "zh": "立创商城",
+      "en": "LCSC"
+    },
+    {
+      "zh": "乐鑫",
+      "en": "Espressif"
+    },
+    {
+      "zh": "人工智能",
+      "en": "AI"
+    },
+    {
+      "zh": "通用人工智能",
+      "en": "AGI"
+    },
+    {
+      "zh": "生成式人工智能",
+      "en": "generative AI"
+    },
+    {
+      "zh": "机器学习",
+      "en": "machine learning"
+    },
+    {
+      "zh": "深度学习",
+      "en": "deep learning"
+    },
+    {
+      "zh": "神经网络",
+      "en": "neural network"
+    },
+    {
+      "zh": "大语言模型",
+      "en": "large language model"
+    },
+    {
+      "zh": "大模型",
+      "en": "LLM"
+    },
+    {
+      "zh": "多模态",
+      "en": "multimodal"
+    },
+    {
+      "zh": "智能体",
+      "en": "AI agent"
+    },
+    {
+      "zh": "具身智能",
+      "en": "embodied AI"
+    },
+    {
+      "zh": "提示词",
+      "en": "prompt"
+    },
+    {
+      "zh": "提示词工程",
+      "en": "prompt engineering"
+    },
+    {
+      "zh": "上下文窗口",
+      "en": "context window"
+    },
+    {
+      "zh": "Token",
+      "en": "token"
+    },
+    {
+      "zh": "思维链",
+      "en": "chain of thought"
+    },
+    {
+      "zh": "函数调用",
+      "en": "function calling"
+    },
+    {
+      "zh": "模型上下文协议",
+      "en": "Model Context Protocol"
+    },
+    {
+      "zh": "预训练",
+      "en": "pre-training"
+    },
+    {
+      "zh": "模型训练",
+      "en": "model training"
+    },
+    {
+      "zh": "微调",
+      "en": "fine-tuning"
+    },
+    {
+      "zh": "强化学习",
+      "en": "reinforcement learning"
+    },
+    {
+      "zh": "知识蒸馏",
+      "en": "knowledge distillation"
+    },
+    {
+      "zh": "模型推理",
+      "en": "model inference"
+    },
+    {
+      "zh": "推理模型",
+      "en": "reasoning model"
+    },
+    {
+      "zh": "幻觉",
+      "en": "hallucination"
+    },
+    {
+      "zh": "检索增强生成",
+      "en": "retrieval-augmented generation"
+    },
+    {
+      "zh": "向量数据库",
+      "en": "vector database"
+    },
+    {
+      "zh": "嵌入模型",
+      "en": "embedding model"
+    },
+    {
+      "zh": "注意力机制",
+      "en": "attention mechanism"
+    },
+    {
+      "zh": "扩散模型",
+      "en": "diffusion model"
+    },
+    {
+      "zh": "混合专家",
+      "en": "mixture of experts"
+    },
+    {
+      "zh": "参数量",
+      "en": "parameter count"
+    },
+    {
+      "zh": "开源模型",
+      "en": "open-source model"
+    },
+    {
+      "zh": "数据集",
+      "en": "dataset"
+    },
+    {
+      "zh": "数据标注",
+      "en": "data annotation"
+    },
+    {
+      "zh": "模型量化",
+      "en": "model quantization"
+    },
+    {
+      "zh": "算力",
+      "en": "computing power"
+    },
+    {
+      "zh": "神经网络处理器",
+      "en": "NPU"
+    },
+    {
+      "zh": "边缘计算",
+      "en": "edge computing"
+    },
+    {
+      "zh": "端侧AI",
+      "en": "on-device AI"
+    },
+    {
+      "zh": "微型机器学习",
+      "en": "TinyML"
+    },
+    {
+      "zh": "计算机视觉",
+      "en": "computer vision"
+    },
+    {
+      "zh": "自然语言处理",
+      "en": "natural language processing"
+    },
+    {
+      "zh": "语音识别",
+      "en": "speech recognition"
+    },
+    {
+      "zh": "语音合成",
+      "en": "speech synthesis"
+    },
+    {
+      "zh": "目标检测",
+      "en": "object detection"
+    },
+    {
+      "zh": "图像识别",
+      "en": "image recognition"
+    },
+    {
+      "zh": "通义千问",
+      "en": "Qwen"
+    },
+    {
+      "zh": "深度求索",
+      "en": "DeepSeek"
+    },
+    {
+      "zh": "智谱",
+      "en": "Zhipu AI"
+    },
+    {
+      "zh": "英伟达",
+      "en": "NVIDIA"
+    },
+    {
+      "zh": "实时操作系统",
+      "en": "RTOS"
+    },
+    {
+      "zh": "引导程序",
+      "en": "bootloader"
+    },
+    {
+      "zh": "中断",
+      "en": "interrupt"
+    },
+    {
+      "zh": "中断服务程序",
+      "en": "interrupt service routine"
+    },
+    {
+      "zh": "看门狗",
+      "en": "watchdog timer"
+    },
+    {
+      "zh": "定时器",
+      "en": "timer"
+    },
+    {
+      "zh": "通用输入输出",
+      "en": "GPIO"
+    },
+    {
+      "zh": "模数转换器",
+      "en": "ADC"
+    },
+    {
+      "zh": "数模转换器",
+      "en": "DAC"
+    },
+    {
+      "zh": "脉宽调制",
+      "en": "PWM"
+    },
+    {
+      "zh": "直接存储器访问",
+      "en": "DMA"
+    },
+    {
+      "zh": "寄存器",
+      "en": "register"
+    },
+    {
+      "zh": "外设",
+      "en": "peripheral"
+    },
+    {
+      "zh": "闪存",
+      "en": "flash memory"
+    },
+    {
+      "zh": "驱动程序",
+      "en": "device driver"
+    },
+    {
+      "zh": "交叉编译",
+      "en": "cross-compilation"
+    },
+    {
+      "zh": "调试器",
+      "en": "debugger"
+    },
+    {
+      "zh": "裸机",
+      "en": "bare metal"
+    },
+    {
+      "zh": "内核",
+      "en": "kernel"
+    },
+    {
+      "zh": "设备树",
+      "en": "device tree"
+    },
+    {
+      "zh": "片上系统",
+      "en": "SoC"
+    },
+    {
+      "zh": "微处理器",
+      "en": "microprocessor"
+    },
+    {
+      "zh": "现场可编程门阵列",
+      "en": "FPGA"
+    },
+    {
+      "zh": "数字信号处理",
+      "en": "digital signal processing"
+    },
+    {
+      "zh": "串行外设接口",
+      "en": "SPI"
+    },
+    {
+      "zh": "集成电路总线",
+      "en": "I2C"
+    },
+    {
+      "zh": "控制器局域网",
+      "en": "CAN bus"
+    },
+    {
+      "zh": "低功耗模式",
+      "en": "low-power mode"
+    },
+    {
+      "zh": "睡眠模式",
+      "en": "sleep mode"
+    },
+    {
+      "zh": "空中升级",
+      "en": "OTA update"
+    },
+    {
+      "zh": "电源",
+      "en": "power supply"
+    },
+    {
+      "zh": "锂电池",
+      "en": "lithium battery"
+    },
+    {
+      "zh": "充电管理",
+      "en": "charge management"
+    },
+    {
+      "zh": "降压转换器",
+      "en": "buck converter"
+    },
+    {
+      "zh": "升压转换器",
+      "en": "boost converter"
+    },
+    {
+      "zh": "稳压器",
+      "en": "voltage regulator"
+    },
+    {
+      "zh": "运算放大器",
+      "en": "op-amp"
+    },
+    {
+      "zh": "比较器",
+      "en": "comparator"
+    },
+    {
+      "zh": "继电器",
+      "en": "relay"
+    },
+    {
+      "zh": "光耦",
+      "en": "optocoupler"
+    },
+    {
+      "zh": "磁珠",
+      "en": "ferrite bead"
+    },
+    {
+      "zh": "保险丝",
+      "en": "fuse"
+    },
+    {
+      "zh": "连接器",
+      "en": "connector"
+    },
+    {
+      "zh": "排针",
+      "en": "pin header"
+    },
+    {
+      "zh": "散热片",
+      "en": "heatsink"
+    },
+    {
+      "zh": "外壳",
+      "en": "enclosure"
+    },
+    {
+      "zh": "电压",
+      "en": "voltage"
+    },
+    {
+      "zh": "接地",
+      "en": "grounding"
+    },
+    {
+      "zh": "上拉电阻",
+      "en": "pull-up resistor"
+    },
+    {
+      "zh": "下拉电阻",
+      "en": "pull-down resistor"
+    },
+    {
+      "zh": "电机",
+      "en": "motor"
+    },
+    {
+      "zh": "步进电机",
+      "en": "stepper motor"
+    },
+    {
+      "zh": "舵机",
+      "en": "servo"
+    },
+    {
+      "zh": "编码器",
+      "en": "encoder"
+    },
+    {
+      "zh": "液晶屏",
+      "en": "LCD"
+    },
+    {
+      "zh": "发光二极管",
+      "en": "LED"
+    },
+    {
+      "zh": "摄像头模组",
+      "en": "camera module"
+    },
+    {
+      "zh": "麦克风阵列",
+      "en": "microphone array"
+    },
+    {
+      "zh": "3D打印",
+      "en": "3D printing"
+    },
+    {
+      "zh": "以太网",
+      "en": "Ethernet"
+    },
+    {
+      "zh": "路由器",
+      "en": "router"
+    },
+    {
+      "zh": "交换机",
+      "en": "network switch"
+    },
+    {
+      "zh": "网关",
+      "en": "gateway"
+    },
+    {
+      "zh": "协议栈",
+      "en": "protocol stack"
+    },
+    {
+      "zh": "网络协议",
+      "en": "network protocol"
+    },
+    {
+      "zh": "IP地址",
+      "en": "IP address"
+    },
+    {
+      "zh": "子网掩码",
+      "en": "subnet mask"
+    },
+    {
+      "zh": "域名解析",
+      "en": "DNS resolution"
+    },
+    {
+      "zh": "带宽",
+      "en": "bandwidth"
+    },
+    {
+      "zh": "网络延迟",
+      "en": "network latency"
+    },
+    {
+      "zh": "吞吐量",
+      "en": "throughput"
+    },
+    {
+      "zh": "丢包",
+      "en": "packet loss"
+    },
+    {
+      "zh": "数据包",
+      "en": "packet"
+    },
+    {
+      "zh": "防火墙",
+      "en": "firewall"
+    },
+    {
+      "zh": "虚拟专用网络",
+      "en": "VPN"
+    },
+    {
+      "zh": "网状网络",
+      "en": "mesh network"
+    },
+    {
+      "zh": "低功耗广域网",
+      "en": "LPWAN"
+    },
+    {
+      "zh": "窄带物联网",
+      "en": "NB-IoT"
+    },
+    {
+      "zh": "套接字",
+      "en": "socket"
+    },
+    {
+      "zh": "端口",
+      "en": "port"
+    },
+    {
+      "zh": "光纤",
+      "en": "optical fiber"
+    },
+    {
+      "zh": "网线",
+      "en": "Ethernet cable"
+    },
+    {
+      "zh": "服务器",
+      "en": "server"
+    },
+    {
+      "zh": "客户端",
+      "en": "client"
+    },
+    {
+      "zh": "云平台",
+      "en": "cloud platform"
+    }
+  ]
+}

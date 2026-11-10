@@ -1,0 +1,6 @@
+http_proxy=http://192.168.50.86:7890
+https_proxy=http://192.168.50.86:7890
+HTTP_PROXY=http://192.168.50.86:7890
+HTTPS_PROXY=http://192.168.50.86:7890
+no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,.local
+NO_PROXY=localhost,127.0.0.1,::1,192.168.0.0/16,.local
